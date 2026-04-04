@@ -235,7 +235,6 @@ const App = () => {
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Mobile Navigation Overlay - FIXED VERSION */}
         {/* Mobile Navigation Overlay - FIXED SCROLL VERSION */}
         <div className={`
           fixed inset-0 bg-stone-50 transition-all duration-500 md:hidden
@@ -243,7 +242,7 @@ const App = () => {
           z-[1000] 
          `}>
           {/* We use 'fixed inset-0' to make sure it fills the phone screen regardless of scroll */}
-          <div className="flex flex-col items-center justify-center h-full w-full gap-12 bg-stone-50">
+          <div className="fixed inset-0 flex flex-col items-center justify-center h-full w-full gap-12 bg-stone-50">
             <div className="flex flex-col items-center gap-10">
               {navLinks.map((link) => (
                 <a 
