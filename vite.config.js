@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/archive-perspective/", // <--- Must have the slashes on BOTH sides!
+  base: "/archive-perspective/", // <--- CHECK THIS: Slashes on both sides!
 })
