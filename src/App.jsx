@@ -211,12 +211,13 @@ const App = () => {
     <div className="min-h-screen bg-[#FDFCF9] text-stone-900 font-sans selection:bg-stone-200 leading-relaxed scroll-smooth">
       
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-5 flex justify-between items-center ${scrolled ? 'bg-[#FDFCF9]/95 backdrop-blur-md border-b border-stone-200' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 w-full z-[999] transition-all duration-300 px-6 md:px-12 py-5 flex justify-between items-center ${scrolled ? 'bg-[#FDFCF9]/95 backdrop-blur-md border-b border-stone-200' : 'bg-transparent'}`}>
         <div className="flex items-center gap-3">
           <History className="w-6 h-6 text-stone-800" />
           <span className="font-serif font-black tracking-tighter text-xl uppercase">An Analysis of Wartime Identity</span>
         </div>
 
+        {/* Desktop Links - Stays the same */}
         <div className="hidden md:flex items-center gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-500">
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} className="hover:text-stone-900 transition-colors relative group">
@@ -226,13 +227,21 @@ const App = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - UPDATED */}
         <button 
-          onClick={() => setIsMenuOpen(!isMenuOpen)} 
-          className="md:hidden p-2 text-stone-600 z-[200] relative"
+          className="md:hidden p-2 text-stone-800 z-[1001] relative" // HIGHER than the overlay
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
+
+        {/* Mobile Navigation Overlay */}
+        <div className={`
+          fixed inset-0 bg-stone-50 z-[1000] flex flex-col items-center justify-center transition-all duration-500 md:hidden
+          ${isMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}
+        `}>
+          {/* ... your links go here ... */}
+        </div>
       </nav>
 
       {/* Hero Section */}
