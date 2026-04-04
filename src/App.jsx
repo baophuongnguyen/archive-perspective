@@ -235,40 +235,40 @@ const App = () => {
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Mobile Navigation Overlay - FIXED SCROLL VERSION */}
+        {/* Mobile Navigation Overlay - SOLID VERSION */}
         <div className={`
-          fixed inset-0 bg-stone-50 transition-all duration-500 md:hidden
+          fixed inset-0 bg-white transition-all duration-500 md:hidden
           ${isMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}
-          z-[1000] 
-         `}>
-          {/* We use 'fixed inset-0' to make sure it fills the phone screen regardless of scroll */}
-          <div className="fixed inset-0 flex flex-col items-center justify-center h-full w-full gap-12 bg-stone-50">
-            <div className="flex flex-col items-center gap-10">
+          z-[9999] 
+        `}>
+          {/* Main Container with solid background to block the Hero section */}
+          <div className="relative w-full h-full bg-white flex flex-col items-center justify-center p-8">
+            
+            {/* Close button inside the white area for extra safety */}
+            <button 
+              onClick={() => setIsMenuOpen(false)}
+              className="absolute top-6 right-6 p-2 text-stone-400 hover:text-stone-900"
+            >
+              <X className="w-8 h-8" />
+            </button>
+
+            <nav className="flex flex-col items-center gap-12">
               {navLinks.map((link) => (
                 <a 
                   key={link.name} 
                   href={link.href} 
                   onClick={() => setIsMenuOpen(false)} 
-                  className="text-4xl font-serif font-black uppercase tracking-[0.2em] text-stone-900 active:text-emerald-800 transition-colors"
+                  className="text-4xl font-serif font-black uppercase tracking-[0.2em] text-stone-900"
                 >
                   {link.name}
                 </a>
               ))}
-            </div>
+            </nav>
             
-            <div className="mt-12 text-center opacity-30">
-              <p className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-500">Archive Perspective</p>
-              <div className="h-px w-12 bg-stone-300 mx-auto mt-4"></div>
+            <div className="mt-20 text-center border-t border-stone-100 pt-8 w-32">
+               <p className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-300">Archive</p>
             </div>
           </div>
-
-          {/* Extra Close Button at the bottom for thumb-reachability */}
-          <button 
-            onClick={() => setIsMenuOpen(false)}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 p-4 rounded-full bg-stone-200/50 text-stone-500"
-          >
-            <X className="w-5 h-5" />
-          </button>
         </div>
       </nav>
 
