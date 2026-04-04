@@ -591,10 +591,10 @@ const App = () => {
           
           <div className="space-y-12 text-xl md:text-2xl font-serif text-stone-800 leading-tight italic">
             <p>
-              The study confirms that these linguistic patterns are not accidental but are reflective of <b>discursive cultures</b>. The Vietnamese soldier writes as a component of a 'collective we,' moving toward a shared historical inevitability (independence).
+              "This study provides a view into how Vietnamese soldiers and US soldiers expressed identity during the Vietnam-American war. The patterns we found reflect different ways of thinking, writing, and awareness of oneself."
             </p>
             <p>
-              Vietnamese soldiers often describe their experiences as part of a collective “we,” emphasizing shared purpose and a sense of fighting for the sake of the nation. In contrast, American soldiers tend to write from an individual “I,” focusing on personal thoughts and emotions, with a longing for their sweet home. By maintaining a strict, <b>clearly outlined processing line</b> - from scanning, to OCR, to OCR correction and to underscored tokenization, this research ensures that these semantic nuances are  <b>preserved and be heard</b>.
+              "Vietnamese soldiers often describe their experiences as part of a collective “we,” emphasizing shared purpose and a sense of fighting for the sake of the nation. In contrast, American soldiers tend to write from an individual “I,” focusing on personal thoughts and emotions, with a long for returning home. By maintaining a strict, <b>clearly outlined processing line</b> - from scanning, to OCR, to OCR correction and to underscored tokenization, this research ensures that these incredible voices are  <b>preserved and be heard</b>.
             </p>
           </div>
 
