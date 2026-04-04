@@ -236,37 +236,39 @@ const App = () => {
         </button>
 
         {/* Mobile Navigation Overlay - SOLID VERSION */}
+        {/* Mobile Navigation Overlay - LOCKED FULLSCREEN VERSION */}
         <div className={`
-          fixed inset-0 bg-white transition-all duration-500 md:hidden
+          fixed inset-0 bg-[#FDFCF9] transition-all duration-500 md:hidden
           ${isMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}
           z-[9999] 
         `}>
-          {/* Main Container with solid background to block the Hero section */}
-          <div className="relative w-full h-full bg-white flex flex-col items-center justify-center p-8">
+          {/* Inner container to hold links in the center of the phone screen */}
+          <div className="flex flex-col items-center justify-center h-full w-full gap-12 relative">
             
-            {/* Close button inside the white area for extra safety */}
+            {/* Close button specifically for mobile menu */}
             <button 
               onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 right-6 p-2 text-stone-400 hover:text-stone-900"
+              className="absolute top-8 right-8 p-2 text-stone-800"
             >
               <X className="w-8 h-8" />
             </button>
 
-            <nav className="flex flex-col items-center gap-12">
+            <nav className="flex flex-col items-center gap-10">
               {navLinks.map((link) => (
                 <a 
                   key={link.name} 
                   href={link.href} 
                   onClick={() => setIsMenuOpen(false)} 
-                  className="text-4xl font-serif font-black uppercase tracking-[0.2em] text-stone-900"
+                  className="text-4xl font-serif font-black uppercase tracking-[0.2em] text-stone-900 active:text-emerald-800"
                 >
                   {link.name}
                 </a>
               ))}
             </nav>
             
-            <div className="mt-20 text-center border-t border-stone-100 pt-8 w-32">
-               <p className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-300">Archive</p>
+            <div className="mt-12 text-center">
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-400">Archive Perspective</p>
+              <div className="h-px w-12 bg-stone-200 mx-auto mt-4"></div>
             </div>
           </div>
         </div>
