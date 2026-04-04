@@ -241,7 +241,7 @@ const App = () => {
           fixed inset-0 bg-stone-50 transition-all duration-500 md:hidden
           ${isMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}
           z-[1000] 
-        `}>
+         `}>
           {/* We use 'fixed inset-0' to make sure it fills the phone screen regardless of scroll */}
           <div className="flex flex-col items-center justify-center h-full w-full gap-12 bg-stone-50">
             <div className="flex flex-col items-center gap-10">
