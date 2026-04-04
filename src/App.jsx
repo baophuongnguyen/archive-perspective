@@ -128,6 +128,14 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+  if (isMenuOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'unset';
+  }
+}, [isMenuOpen]);
+
   const insights = {
     digitization: {
       title: "Physical Digitization",
@@ -235,7 +243,6 @@ const App = () => {
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Mobile Navigation Overlay - SOLID VERSION */}
         {/* Mobile Navigation Overlay - LOCKED FULLSCREEN VERSION */}
         <div className={`
           fixed inset-0 bg-[#FDFCF9] transition-all duration-500 md:hidden
