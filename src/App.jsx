@@ -217,7 +217,7 @@ const App = () => {
           <span className="font-serif font-black tracking-tighter text-xl uppercase">An Analysis of Wartime Identity</span>
         </div>
 
-        {/* Desktop Links - Stays the same */}
+        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-500">
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} className="hover:text-stone-900 transition-colors relative group">
@@ -227,20 +227,36 @@ const App = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button - UPDATED */}
+        {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 text-stone-800 z-[1001] relative" // HIGHER than the overlay
+          className="md:hidden p-2 text-stone-800 z-[1001] relative" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Mobile Navigation Overlay */}
+        {/* Mobile Navigation Overlay - FIXED VERSION */}
         <div className={`
           fixed inset-0 bg-stone-50 z-[1000] flex flex-col items-center justify-center transition-all duration-500 md:hidden
           ${isMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}
         `}>
-          {/* ... your links go here ... */}
+          <div className="flex flex-col items-center gap-10">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                onClick={() => setIsMenuOpen(false)} // This closes the menu when you click
+                className="text-3xl font-serif font-extrabold uppercase tracking-[0.2em] text-stone-900 hover:text-emerald-800 transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+          
+          <div className="absolute bottom-12 text-center">
+            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-400 mb-2">Archive Perspective</p>
+            <div className="h-px w-8 bg-stone-200 mx-auto"></div>
+          </div>
         </div>
       </nav>
 
