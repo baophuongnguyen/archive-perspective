@@ -245,7 +245,7 @@ const App = () => {
 
         {/* Mobile Navigation Overlay - LOCKED FULLSCREEN VERSION */}
         <div className={`
-          fixed inset-0 bg-[#FDFCF9] transition-all duration-500 md:hidden
+          position-fixed inset-0 bg-[#FDFCF9] transition-all duration-500 md:hidden
           ${isMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}
           z-[9999] 
         `}>
@@ -597,7 +597,7 @@ const App = () => {
                             <div className="absolute inset-0 bg-stone-950/80 backdrop-blur-sm"></div>
                             
                             {/* The Image itself */}
-                            <div className="relative max-w-5xl w-[85vw] p-4 bg-stone-900 rounded-2xl border border-stone-700 shadow-[0_0_100px_rgba(0,0,0,0.9)]">
+                            <div className="relative max-w-4xl w-[85vw] p-4 bg-stone-900 rounded-2xl border border-stone-700 shadow-[0_0_100px_rgba(0,0,0,0.9)]">
                               <img 
                                 src={item.evidence} 
                                 alt="Research Evidence" 
