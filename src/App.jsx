@@ -219,7 +219,7 @@ const App = () => {
     <div className="min-h-screen bg-[#FDFCF9] text-stone-900 font-sans selection:bg-stone-200 leading-relaxed scroll-smooth">
       
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-[999] transition-all duration-300 px-6 md:px-12 py-5 flex justify-between items-center ${scrolled ? 'bg-[#FDFCF9]/95 backdrop-blur-md border-b border-stone-200' : 'bg-transparent'}`}>
+      <nav className={`position-fixed top-0 w-full z-[999] transition-all duration-300 px-6 md:px-12 py-5 flex justify-between items-center ${scrolled ? 'bg-[#FDFCF9]/95 backdrop-blur-md border-b border-stone-200' : 'bg-transparent'}`}>
         <div className="flex items-center gap-3">
           <History className="w-6 h-6 text-stone-800" />
           <span className="font-serif font-black tracking-tighter text-xl uppercase">An Analysis of Wartime Identity</span>
