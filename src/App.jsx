@@ -316,7 +316,7 @@ const App = () => {
                       This project adopts a structured data processing pipeline to transform unstructured scanned Vietnamese text into analyzable data. By comparing <b>Bông Lau Thời Hoa Lửa</b> with <b>A Chaplain's Diary of Vietnam</b>, we - Bao Phuong and Hoang Nhi - map the cultural divide between the "Collective We" and the "Individual I."
                     </p>
                     <p>
-                      Our methodology bridges the gap between raw OCR extraction and semantic tokenization, providing a data-driven window into divergent wartime identities.
+                      Our methodology bridges the gap between raw OCR extraction and semantic tokenization, providing a data-driven window into divergent wartime identities. We are aiming for the highest tier of the project: tier 3!
                     </p>
                   </div>
                 </div>
@@ -620,10 +620,10 @@ const App = () => {
                   <h4 className="text-2xl font-serif font-bold mb-6">Conclusion on Narrative Tone</h4>
                   <div className="space-y-6 text-stone-700 relative z-10 leading-relaxed text-[16px]">
                     <p>
-                      The <b>US Voice</b> is psychological and introspective, using the diary as a space for processing trauma. Phrases like "I felt" and "I remember" are ubiquitous, grounded in the physical self.
+                      The <b>US Voice</b> is psychological and introspective, using the diary as a space for processing trauma. Phrases like "I felt" and "I remember" are everywhere, grounded in the physical self. To us, when having close reading, the US voice is more raw and emotional, with a strong focus on the individual experience of war. The "I" is central, reflecting a narrative of personal struggle, fear, and hope for survival, and especially the longing for their home.
                     </p>
                     <p>
-                      The <b>Vietnamese Voice</b> is restrained and objective. Emotions are secondary to the lens of the collective, which is the shared grief of a unit or the joy of a communal victory. The "I" is secondary, reflecting a narrative of shared memory over individual trauma.
+                      The <b>Vietnamese Voice</b> is still somewhat restrained and objective even when it is a memoir. Personal emotions are secondary to the lens of the collective, which is the shared grief of a unit or the joy of a communal victory. The "I" is secondary, reflecting a narrative of shared memory over individual trauma. It is not good or bad, but it is a different way of using language to construct identity and meaning in the context of war.
                     </p>
                   </div>
                 </div>
@@ -734,7 +734,9 @@ const App = () => {
                 <p>O'brien, T. <a href="https://culliton.org/uploads/3/4/4/2/34421062/the_things_they_carried_a_work_of_fiction_obrien_.pdf" target="_blank" className="underline hover:text-emerald-800">The Things They Carried.</a></p>
                 <p>Pike, E. (1995). <a href="https://www.thesunmagazine.org/articles/25208-a-vietnam-diary" target="_blank" className="underline hover:text-emerald-800">A Vietnam Diary. The Sun Magazine.</a></p>
                 <p>Webb, W. (1968). <a href="https://currahee.org/about_CHAPLAIN.Webb_diary.pdf" target="_blank" className="underline hover:text-emerald-800">C U R R A H E E: A CHAPLAIN’S DIARY OF VIET NAM.</a></p>
-                <p className="text-stone-800 font-bold italic">Trung đoàn 38 Pháo Binh Bông Lau. (2012). Bông Lau Thời Hoa Lửa. Nhà Xuất Bản Văn Hóa Dân Tộc Hà Nội.</p>
+                <p className="text-stone-800 font-bold italic">The link for the book below is specifically connects to the drive that has all the outcomes of the steps that we took to clean the texts, so you can see the evolvement of the project here: </p>
+                <p>Trung đoàn 38 Pháo Binh Bông Lau. (2012) <a href="https://drive.google.com/file/d/1pslWTdANrgqhNVNRCpqerHQefORIz-i1/view?usp=drive_link" target="_blank" className="underline hover:text-emerald-800">Bông Lau Thời Hoa Lửa. Nhà Xuất Bản Văn Hóa Dân Tộc Hà Nội.</a></p>
+
               </div>
             </div>
 
