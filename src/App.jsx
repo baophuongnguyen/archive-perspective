@@ -216,49 +216,20 @@ const App = () => {
     { name: 'Reflection', href: '#reflection' }
   ];
 
-    // Scroll detection
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Prevent background scroll when menu is open (nice UX touch)
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-  }, [isMenuOpen]);
-
   return (
     <div className="min-h-screen bg-[#FDFCF9] text-stone-900 font-sans selection:bg-stone-200 leading-relaxed scroll-smooth">
       
       {/* Navigation */}
-      {/* Navigation */}
-      <nav
-        className={`fixed top-0 w-full z-[999] transition-all duration-300 px-6 md:px-12 py-5 flex justify-between items-center ${
-          scrolled
-            ? 'bg-[#FDFCF9]/95 backdrop-blur-md border-b border-stone-200'
-            : 'bg-transparent'
-        }`}
-      >
-        {/* Logo */}
+      <nav className={`fixed top-0 w-full z-[999] transition-all duration-300 px-6 md:px-12 py-5 flex justify-between items-center ${scrolled ? 'bg-[#FDFCF9]/95 backdrop-blur-md border-b border-stone-200' : 'bg-transparent'}`}>
         <div className="flex items-center gap-3">
           <History className="w-6 h-6 text-stone-800" />
-          <span className="font-serif font-black tracking-tighter text-xl uppercase">
-            An Analysis of Wartime Identity
-          </span>
+          <span className="font-serif font-black tracking-tighter text-xl uppercase">An Analysis of Wartime Identity</span>
         </div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-500">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="hover:text-stone-900 transition-colors relative group"
-            >
+            <a key={link.name} href={link.href} className="hover:text-stone-900 transition-colors relative group">
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-stone-900 transition-all group-hover:w-full"></span>
             </a>
@@ -266,56 +237,45 @@ const App = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 text-stone-800 z-[1001] relative"
+        <button 
+          className="md:hidden p-2 text-stone-800 z-[1001] relative" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Mobile Navigation Overlay */}
-        <div
-          className={`
-            fixed inset-0 bg-[#FDFCF9] transition-all duration-500 md:hidden
-            ${isMenuOpen
-              ? 'opacity-100 pointer-events-auto'
-              : 'opacity-0 pointer-events-none'}
-            z-[9999]
-          `}
-        >
+        {/* Mobile Navigation Overlay - LOCKED FULLSCREEN VERSION */}
+        <div className={`
+          fixed inset-0 bg-[#FDFCF9] transition-all duration-500 md:hidden
+          ${isMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}
+          z-[9999] 
+        `}>
+          {/* Inner container to hold links in the center of the phone screen */}
           <div className="flex flex-col items-center justify-center h-full w-full gap-12 relative">
             
-            {/* Close button */}
-            <button
+            {/* Close button specifically for mobile menu */}
+            <button 
               onClick={() => setIsMenuOpen(false)}
               className="absolute top-8 right-8 p-2 text-stone-800"
             >
               <X className="w-8 h-8" />
             </button>
 
-            {/* Mobile Links */}
-            <div className="flex flex-col items-center gap-10">
+            <nav className="flex flex-col items-center gap-10">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  onClick={() => setIsMenuOpen(false)} 
                   className="text-4xl font-serif font-black uppercase tracking-[0.2em] text-stone-900 active:text-emerald-800"
                 >
                   {link.name}
                 </a>
               ))}
-            </div>
-
-            {/* Footer */}
+            </nav>
+            
             <div className="mt-12 text-center">
-              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-400">
-                Archive Perspective
-              </p>
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-400">Archive Perspective</p>
               <div className="h-px w-12 bg-stone-200 mx-auto mt-4"></div>
             </div>
           </div>
